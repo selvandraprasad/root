@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>OPEN EXTERNAL PDF FILE</title>
+<script type="text/javascript" charset="utf-8" src=""></script>
+<script type="text/javascript" charset="utf-8">
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+alert("Device Ready!");
+
+}
+
+function onBtnClickOpenPDF(){
+		 var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); })
+		 }
+</script>
+</head>
+
+<body>
+
+<h1> Open external PDF File </h1>
+
+<input type="button" name="Open PDF" onClick="onBtnClickOpenPDF()"/>
+
+</body>
+</html>
